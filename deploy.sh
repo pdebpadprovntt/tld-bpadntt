@@ -5,7 +5,7 @@ set -e
 echo "=== Starting Deployment ==="
 
 # Go to the project directory
-cd /www/wwwroot/tld-bpad.nttprov.go.id
+cd /www/wwwroot/tld-bpad
 
 # Pull the latest changes from the main branch
 echo "Pulling latest changes from GitHub..."
@@ -35,8 +35,8 @@ fi
 
 # Set proper ownership & permissions for aaPanel
 echo "Applying permissions..."
-chown -R www:www /www/wwwroot/tld-bpad.nttprov.go.id
-chmod -R 755 /www/wwwroot/tld-bpad.nttprov.go.id/storage
-chmod -R 755 /www/wwwroot/tld-bpad.nttprov.go.id/bootstrap/cache
+chown -R www:www /www/wwwroot/tld-bpad
+chmod -R 755 /www/wwwroot/tld-bpad/storage
+chmod -R 755 /www/wwwroot/tld-bpad/bootstrap/cache
 
 echo "=== Deployment Finished Successfully! ==="

@@ -29,12 +29,12 @@ Buka **Terminal** dan jalankan:
 
 ```bash
 cd ~/Documents
-git clone git@github.com:pdebpadprovntt/tld-bpadntt.git tld-bpadntt-dev
-cd tld-bpadntt-dev
+git clone git@github.com:pdebpadprovntt/tld-bpadntt.git tld-bpad-dev
+cd tld-bpad-dev
 ```
 
 > Jika menggunakan HTTPS (password/token):  
-> `git clone https://github.com/pdebpadprovntt/tld-bpadntt.git tld-bpadntt-dev`
+> `git clone https://github.com/pdebpadprovntt/tld-bpadntt.git tld-bpad-dev`
 
 ---
 
@@ -117,7 +117,7 @@ git push origin main
 ### Di Laptop Baru (setelah clone)
 
 ```bash
-cd ~/Documents/tld-bpadntt-dev
+cd ~/Documents/tld-bpad-dev
 
 # Ambil perubahan terbaru
 git pull origin main
@@ -174,8 +174,8 @@ Clone repo ke folder web:
 
 ```bash
 cd /www/wwwroot
-git clone git@github.com:pdebpadprovntt/tld-bpadntt.git tld-bpadntt
-cd tld-bpadntt
+git clone git@github.com:pdebpadprovntt/tld-bpadntt.git tld-bpad
+cd tld-bpad
 ```
 
 ---
@@ -298,10 +298,10 @@ php artisan optimize
 ### Langkah 7: Set Permission Folder
 
 ```bash
-chown -R www:www /www/wwwroot/tld-bpadntt
-chmod -R 755 /www/wwwroot/tld-bpadntt
-chmod -R 775 /www/wwwroot/tld-bpadntt/storage
-chmod -R 775 /www/wwwroot/tld-bpadntt/bootstrap/cache
+chown -R www:www /www/wwwroot/tld-bpad
+chmod -R 755 /www/wwwroot/tld-bpad
+chmod -R 775 /www/wwwroot/tld-bpad/storage
+chmod -R 775 /www/wwwroot/tld-bpad/bootstrap/cache
 ```
 
 ---
@@ -311,7 +311,7 @@ chmod -R 775 /www/wwwroot/tld-bpadntt/bootstrap/cache
 1. Buka aaPanel → **Website** → Add Site
 2. Isi:
    - Domain: `bpad.nttprov.go.id` (atau domain Anda)
-   - Root: `/www/wwwroot/tld-bpadntt/public`
+   - Root: `/www/wwwroot/tld-bpad/public`
    - PHP Version: PHP 8.3
 3. Klik **Submit**
 
@@ -347,14 +347,14 @@ Setiap kali ada perubahan kode, deploy ke produksi:
 
 ```bash
 # 1. Di laptop development — commit & push
-cd ~/Documents/tld-bpadntt-dev
+cd ~/Documents/tld-bpad-dev
 git add .
 git commit -m "Deskripsi perubahan"
 git push origin main
 
 # 2. SSH ke VPS — pull & update
 ssh root@212.85.26.65
-cd /www/wwwroot/tld-bpadntt
+cd /www/wwwroot/tld-bpad
 git pull origin main
 composer install --optimize-autoloader --no-dev
 php artisan migrate --force
@@ -440,7 +440,7 @@ git config --global user.email "email@anda.com"
 - [ ] `php artisan serve`
 
 ### Deploy Produksi
-- [ ] Clone repo ke VPS (`/www/wwwroot/tld-bpadntt`)
+- [ ] Clone repo ke VPS (`/www/wwwroot/tld-bpad`)
 - [ ] Setup `.env` produksi (MySQL)
 - [ ] Buat database dan user di aaPanel
 - [ ] `composer install --optimize-autoloader --no-dev`
