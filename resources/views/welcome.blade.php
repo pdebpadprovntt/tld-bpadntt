@@ -14,19 +14,10 @@
             if (!link) {
                 link = document.createElement('link');
                 link.rel = 'icon';
-                link.type = 'image/svg+xml';
+                link.type = 'image/png';
                 document.head.appendChild(link);
             }
-            var bg = theme === 'dark' ? '#1e293b' : '#ffffff';
-            var stroke = theme === 'dark' ? '#3b82f6' : '#2563eb';
-            var check = theme === 'dark' ? '#10b981' : '#16a34a';
-            var shield = 'M16 4s8 2 8 8v6c0 5.5-3.5 10-8 12c-4.5-2-8-6.5-8-12V12c0-6 8-8 8-8z';
-            var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">' +
-                      '<rect width="32" height="32" rx="8" fill="' + bg + '"/>' +
-                      '<path d="' + shield + '" fill="none" stroke="' + stroke + '" stroke-width="2" stroke-linejoin="round"/>' +
-                      '<path d="M12 16l3 3 5-5" stroke="' + check + '" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>' +
-                      '</svg>';
-            link.href = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+            link.href = '{{ asset('favicon.png') }}';
         }
         (function() {
             var t = localStorage.getItem('bpad-theme') || 'dark';
